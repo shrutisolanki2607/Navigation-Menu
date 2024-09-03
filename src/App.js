@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { Route,Routes } from 'react-router-dom';
 import './App.css';
+//import Navigation from './components/Navigation'
+import Resources from './components/Resources';
+import Home from  './components/Home'
+import Ivestors from './components/Ivestors';
+import Founders from './components/Founders';
+import {lazy, Suspense} from 'react';
+import PrivateResources from './components/PrivateResources';
+
+const Navigation = lazy(()=>import('../src/components/Navigation'))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Suspense>
+      <Navigation/>
+      </Suspense>
+       <div>
+       <Routes>
+        <Route path='/Resources' element={<Resources/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/Ivestors' element={<Ivestors/>}/>
+        <Route path='/Founders' element={<Founders/>}/>
+        <Route path='/Resources/private-market' element={<PrivateResources/>} />
+       </Routes>
+       </div> */}
+    </>
   );
 }
 
